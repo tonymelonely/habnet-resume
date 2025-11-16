@@ -58,6 +58,13 @@ export default function HotelViewPage() {
 
   const [scale, setScale] = useState(1);
 
+  // direct hotel-view openen = reset "completed"
+useEffect(() => {
+  try {
+    localStorage.removeItem("completedBasement");
+  } catch {}
+}, []);
+
   useEffect(() => {
     function handleResize() {
       const vw = window.innerWidth;
@@ -209,7 +216,7 @@ export default function HotelViewPage() {
             />
 
             {/* VISUELE DEUREN */}
-            <div className="pointer-events-none absolute bottom-[10%] left-1/2 -ml-1 -translate-x-1/2 h-[21.3%] w-[7.6%] z-[25]">
+            <div className="pointer-events-none absolute bottom-[10%] left-1/2 -ml-1 -translate-x-1/2 h-[21.3%] w-[7.7%] z-[25]">
               <div className="relative w-full h-full">
                 <img
                   src="/deur_links.png"
