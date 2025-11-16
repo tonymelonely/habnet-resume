@@ -1,0 +1,315 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Habnet hotel intro ===== */
+
+@keyframes cloud-drift-slow {
+  0% {
+    transform: translateX(-10%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(10%) translateY(-4px);
+  }
+
+  100% {
+    transform: translateX(-10%) translateY(0);
+  }
+}
+
+@keyframes cloud-drift-fast {
+  0% {
+    transform: translateX(0%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(16%) translateY(4px);
+  }
+
+  100% {
+    transform: translateX(0%) translateY(0);
+  }
+}
+
+/* ===== Habnet hotel intro ===== */
+
+@keyframes cloud-drift-slow {
+  0% {
+    transform: translateX(-15%) translateY(0);
+  }
+  50% {
+    transform: translateX(15%) translateY(-6px);
+  }
+  100% {
+    transform: translateX(-15%) translateY(0);
+  }
+}
+
+@keyframes cloud-drift-fast {
+  0% {
+    transform: translateX(0%) translateY(0);
+  }
+  50% {
+    transform: translateX(20%) translateY(6px);
+  }
+  100% {
+    transform: translateX(0%) translateY(0);
+  }
+}
+
+@keyframes sunny-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+}
+
+.cloud-slow {
+  animation: cloud-drift-slow 32s ease-in-out infinite;
+}
+
+.cloud-fast {
+  animation: cloud-drift-fast 24s ease-in-out infinite;
+}
+
+.sunny-glow {
+  animation: sunny-pulse 10s ease-in-out infinite;
+}
+
+
+@keyframes habboChatPopup {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px) scale(0.96);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, 0px) scale(1);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(-50%, -40vh) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50vh) scale(1);
+  }
+}
+
+.habbo-chat-anim {
+  animation: habboChatPopup 15s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes fadeInSlow {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-slow {
+  animation: fadeInSlow 600ms ease-out forwards;
+}
+
+/* ====== Wolken animaties ====== */
+
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(15%);
+  }
+}
+
+@keyframes cloudDriftFast {
+  0% {
+    transform: translateX(10%);
+  }
+  50% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+/* koppel de keyframes aan je bestaande classes */
+.cloud-slow {
+  animation: cloudDriftSlow 40s linear infinite alternate;
+}
+
+.cloud-fast {
+  animation: cloudDriftFast 26s linear infinite alternate;
+}
+
+/* ====== Wolken animaties ====== */
+
+@keyframes cloud-slow {
+  0% {
+    transform: translateX(-120vw); /* ver buiten beeld links */
+  }
+  100% {
+    transform: translateX(120vw);  /* ver buiten beeld rechts */
+  }
+}
+
+@keyframes cloud-fast {
+  0% {
+    transform: translateX(120vw);  /* ver buiten beeld rechts */
+  }
+  100% {
+    transform: translateX(-140vw); /* ver buiten beeld links */
+  }
+}
+
+.animate-cloud-slow {
+  animation-name: cloud-slow;
+  animation-duration: 85s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;   /* belangrijk: ook bij negative delay */
+}
+
+.animate-cloud-fast {
+  animation-name: cloud-fast;
+  animation-duration: 75s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes lobbyFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.02) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.lobby-fade-in {
+  animation: lobbyFadeIn 600ms ease-out forwards;
+}
+
+.lobby-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/lobby.png");
+  background-size: cover;       
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;  
+}
+
+/* Deuren container */
+.door-wrapper {
+  position: absolute;
+
+  top: 60%;  
+  left: 1030px; 
+
+  width: 215px; 
+  height: 380px;
+
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; 
+}
+
+.door,
+.avatar-tony {
+  image-rendering: pixelated;
+}
+
+
+.door-left {
+  width: 50%; 
+}
+
+.door-right {
+  width: 50%; /* of exacte px breedte: 107px */
+}
+
+.crt-fx {
+  background: black;
+  overflow: hidden;
+  position: relative;
+  filter: contrast(1.2) brightness(1.1);
+}
+
+/* scanlines */
+.crt-scan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.05) 0px,
+    rgba(0, 255, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 3px
+  );
+  pointer-events: none;
+}
+
+/* lichte flicker */
+.crt-scan::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.4) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  animation: crtFlicker 0.12s infinite;
+}
+
+@keyframes crtFlicker {
+  0% { opacity: 0.9; }
+  50% { opacity: 1; }
+  100% { opacity: 0.95; }
+}
+
+
