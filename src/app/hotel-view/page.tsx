@@ -23,9 +23,8 @@ function CloudLayer({ count, z }: { count: number; z: number }) {
         return (
           <div
             key={i}
-            className={`absolute bg-no-repeat bg-contain ${
-              slow ? "animate-cloud-slow" : "animate-cloud-fast"
-            }`}
+            className={`absolute bg-no-repeat bg-contain ${slow ? "animate-cloud-slow" : "animate-cloud-fast"
+              }`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 22}%`,
@@ -58,12 +57,11 @@ export default function HotelViewPage() {
 
   const [scale, setScale] = useState(1);
 
-  // direct hotel-view openen = reset "completed"
-useEffect(() => {
-  try {
-    localStorage.removeItem("completedBasement");
-  } catch {}
-}, []);
+  useEffect(() => {
+    try {
+      localStorage.removeItem("completedBasement");
+    } catch { }
+  }, []);
 
   useEffect(() => {
     function handleResize() {
@@ -181,7 +179,7 @@ useEffect(() => {
             />
 
             {/* AVATARS links */}
-            <div className="pointer-events-none absolute bottom-[5%] left-[25%] hidden md:flex gap-6">
+            <div className="pointer-events-none absolute bottom-[5%] left-[20%] hidden md:flex gap-6">
               <img
                 src="/gio.png"
                 alt="Gio"
@@ -224,10 +222,9 @@ useEffect(() => {
                   className={`
                     absolute inset-y-0 left-0 w-1/2 h-full object-cover
                     transition-transform duration-[1400ms] ease-out
-                    ${
-                      phase === "doors" || phase === "black"
-                        ? "-translate-x-full"
-                        : "translate-x-0"
+                    ${phase === "doors" || phase === "black"
+                      ? "-translate-x-full"
+                      : "translate-x-0"
                     }
                   `}
                   draggable={false}
@@ -238,10 +235,9 @@ useEffect(() => {
                   className={`
                     absolute inset-y-0 right-0 w-1/2 h-full object-cover
                     transition-transform duration-[1400ms] ease-out
-                    ${
-                      phase === "doors" || phase === "black"
-                        ? "translate-x-full"
-                        : "translate-x-0"
+                    ${phase === "doors" || phase === "black"
+                      ? "translate-x-full"
+                      : "translate-x-0"
                     }
                   `}
                   draggable={false}
@@ -402,10 +398,9 @@ useEffect(() => {
                   flex items-center justify-center
                   [transform-origin:50%_50%]
                   transition-opacity duration-[700ms] ease-out
-                  ${
-                    lobbyZoomPhase === "start"
-                      ? "scale-[1.18]"
-                      : "scale-100"
+                  ${lobbyZoomPhase === "start"
+                    ? "scale-[1.18]"
+                    : "scale-100"
                   }
                 `}
               >
