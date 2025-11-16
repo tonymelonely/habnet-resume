@@ -1,4 +1,3 @@
-// app/hotel-view/page.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -122,7 +121,6 @@ export default function HotelViewPage() {
 
   return (
     <main className="fixed inset-0 bg-[#000] overflow-hidden">
-      {/* Vast canvas dat 1-op-1 schaalt (net als lobby) */}
       <div
         className="absolute top-0 left-0"
         style={{
@@ -133,13 +131,10 @@ export default function HotelViewPage() {
         }}
       >
         <div className="relative w-[2512px] h-[1300px] bg-gradient-to-b from-[#7fd5ff] via-[#5ab9ff] to-[#e9fbff] overflow-hidden">
-          {/* Zon */}
           <div className="sunny-glow pointer-events-none absolute -top-24 right-[-60px] h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,_rgba(255,255,255,1),_rgba(253,224,71,0.3)_55%,_transparent_75%)] mix-blend-screen" />
 
-          {/* Wolken */}
           <CloudLayer count={10} z={3} />
 
-          {/* HOTEL + AVATARS */}
           <div
             className={`
               absolute inset-0 overflow-hidden z-10
@@ -150,7 +145,6 @@ export default function HotelViewPage() {
               ${phase === "doors" ? "scale-[15]" : ""}
             `}
           >
-            {/* MINI LOBBY ACHTER DE DEUREN */}
             <img
               src="/lobby_Mini.png"
               className="
@@ -165,7 +159,6 @@ export default function HotelViewPage() {
               draggable={false}
             />
 
-            {/* HOTEL */}
             <img
               src="/habnet_hotel_snow.png"
               alt="Habnet Hotel"
@@ -178,7 +171,6 @@ export default function HotelViewPage() {
               draggable={false}
             />
 
-            {/* AVATARS links */}
             <div className="pointer-events-none absolute bottom-[5%] left-[20%] hidden md:flex gap-6">
               <img
                 src="/Gio.png"
@@ -192,7 +184,6 @@ export default function HotelViewPage() {
               />
             </div>
 
-            {/* AVATAR rechts */}
             <div className="pointer-events-none absolute bottom-[5%] right-[22.5%] hidden md:flex gap-6">
               <img
                 src="/frank.png"
@@ -201,7 +192,6 @@ export default function HotelViewPage() {
               />
             </div>
 
-            {/* DEUR HITBOX */}
             <button
               onDoubleClick={handleDoorDoubleClick}
               className="
@@ -213,7 +203,6 @@ export default function HotelViewPage() {
               "
             />
 
-            {/* VISUELE DEUREN */}
             <div className="pointer-events-none absolute bottom-[10%] left-1/2 -ml-1 -translate-x-1/2 h-[21.3%] w-[7.7%] z-[25]">
               <div className="relative w-full h-full">
                 <img
@@ -245,7 +234,6 @@ export default function HotelViewPage() {
               </div>
             </div>
 
-            {/* Rode loper */}
             <img
               src="/rode_loper.png"
               alt="Rode loper"
@@ -256,7 +244,6 @@ export default function HotelViewPage() {
               "
             />
 
-            {/* Tekst boven loper */}
             <div
               className="
                 absolute bottom-[3%] left-1/2 -translate-x-1/2
@@ -271,14 +258,12 @@ export default function HotelViewPage() {
             </div>
           </div>
 
-          {/* Extra wolkenlaag boven hotel */}
           {phase === "zoom" || phase === "doors" || phase === "black" ? (
             <CloudLayer count={4} z={4} />
           ) : (
             <CloudLayer count={4} z={20} />
           )}
 
-          {/* Gras + sneeuwrand onderaan */}
           <div className="absolute bottom-0 left-0 w-full h-[10%] z-5">
             <div className="absolute inset-0 bg-[linear-gradient(to_top,#14532d_0,#166534_40%,#22c55e_100%)] border-t-4 border-[#052e16]" />
             <div
@@ -300,7 +285,6 @@ export default function HotelViewPage() {
             />
           </div>
 
-          {/* BUBBLE 1 */}
           {(phase === "bubble1" || phase === "bubble2") && (
             <div className="absolute left-[58%] bottom-[30%] z-[50] habbo-chat-anim pointer-events-none">
               <div className="relative inline-flex items-stretch border-[2px] border-black rounded-md bg-white shadow-[2px_2px_0_rgba(0,0,0,1)]">
@@ -325,7 +309,6 @@ export default function HotelViewPage() {
             </div>
           )}
 
-          {/* BUBBLE 2 */}
           {phase === "bubble2" && (
             <div className="absolute left-[53%] bottom-[30%] z-[50] habbo-chat-anim pointer-events-none">
               <div className="relative inline-flex items-stretch border-[2px] border-black rounded-md bg-white shadow-[2px_2px_0_rgba(0,0,0,1)]">
@@ -350,7 +333,6 @@ export default function HotelViewPage() {
             </div>
           )}
 
-          {/* LOBBY PREVIEW OVERLAY */}
           {showLobbyPreview && (
             <>
               <div
