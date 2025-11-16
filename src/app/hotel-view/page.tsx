@@ -181,7 +181,7 @@ export default function HotelViewPage() {
             {/* AVATARS links */}
             <div className="pointer-events-none absolute bottom-[5%] left-[20%] hidden md:flex gap-6">
               <img
-                src="/gio.png"
+                src="/Gio.png"
                 alt="Gio"
                 className="h-[10%] w-auto drop-shadow-[0_12px_24px_rgba(15,23,42,0.9)]"
               />
