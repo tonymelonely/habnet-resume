@@ -107,7 +107,7 @@ const STORY_MEDIA: Record<string, string[]> = {
   "2025": [
     "/images/auraverse.png",
     "/images/dispatch-nexus.png",
-    "/images/percy.png",
+    "/images/Percy.png",
   ],
 };
 
